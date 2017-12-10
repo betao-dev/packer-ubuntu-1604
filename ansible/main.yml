@@ -2,15 +2,51 @@
 - hosts: all
   become: yes
   gather_facts: yes
-
+  vars:
+    wkhtmltopdf_installation: package
+    wkhtmltopdf_version: 0.12.2
   roles:
-    - geerlingguy.nfs
-    - geerlingguy.packer-debian
-
+    - geerlingguy.nodejs
+    - ansiblebit.oracle-java
   tasks:
+    - name: Upgrade and update packages
+      apt: "upgrade=yes update_cache=yes"
+
     - apt: "name={{ item }} state=installed"
       with_items:
         - git
         - wget
         - curl
         - vim
+        - libfreetype6-dev
+        - imagemagick
+        - pdftk
+        - libxml2-dev
+        - libxslt-dev
+        - libcurl4-openssl-dev
+        - iptables-persistent
+        - firefox
+        - xvfb
+        - unzip
+        - python-pip
+        - libssl-dev
+        - python-dev
+        - python-virtualenv
+        - screen
+        - libjpeg-dev
+        - mysql-server-5.7
+        - libmysql++-dev
+        - virtualbox-guest-utils
+
+    - name: Add Google Chrome key
+      shell: wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+
+    - name: Add Google Chrome repo
+      copy: content="deb http://dl.google.com/linux/chrome/deb/ stable main" dest=/etc/apt/sources.list.d/google-chrome.list owner=root group=root mode=644
+
+    - name: Update apt cache
+      apt: update_cache=yes
+    
+    - name: Install Google Chrome
+      apt: pkg=google-chrome-stable state=installed
+

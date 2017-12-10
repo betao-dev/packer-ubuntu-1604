@@ -1,6 +1,6 @@
 # Packer Example - Ubuntu 16.04 minimal Vagrant Box
 
-**Current Ubuntu Version Used**: 16.04.2
+**Current Ubuntu Version Used**: 16.04.3
 
 **Pre-built Vagrant Box**:
 
@@ -53,3 +53,11 @@ MIT license.
 ## Author Information
 
 Created in 2016 by [Jeff Geerling](http://jeffgeerling.com/), author of [Ansible for DevOps](http://ansiblefordevops.com/).
+
+## Fork information
+
+Forked by @inakrin, following updates are made: 
+  
+  - Updated Ubuntu version to 16.04.3
+  - Added default insecure vagrant key to the build, so the box doesn't need to use password for authentication. 
+  - Adjusteed for django development, installed related packages (refer to ansible/main.yml)

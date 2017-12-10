@@ -2,9 +2,6 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.ssh.insert_key = false
-  config.vm.synced_folder '.', '/vagrant', type: 'nfs'
-
   # VMware Fusion.
   # `vagrant up vmware --provider=vmware_fusion`
   config.vm.define "vmware" do |vmware|
