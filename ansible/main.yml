@@ -50,3 +50,12 @@
     - name: Install Google Chrome
       apt: pkg=google-chrome-stable state=installed
 
+    - name: Install packages based on requirements.txt.
+      pip: 
+        requirements: /home/vagrant/requirements.txt
+        virtualenv: /opt/virtualenv
+        virtualenv_python: python2.7
+    - name: Install packages based on package.json.
+      npm:
+        path: /home/vagrant
+

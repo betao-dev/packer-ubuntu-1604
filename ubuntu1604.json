@@ -16,6 +16,21 @@
       "script": "scripts/vagrant.sh"
     },
     {
+      "type": "file",
+      "source": "requirements.txt",
+      "destination": "/home/vagrant/requirements.txt"
+    },
+    {
+      "type": "file",
+      "source": "package.json",
+      "destination": "/home/vagrant/package.json"
+    },
+    {
+      "type": "file",
+      "source": "bower.json",
+      "destination": "/home/vagrant/bower.json"
+    },
+    {
       "type": "ansible-local",
       "playbook_file": "ansible/main.yml",
       "galaxy_file": "requirements.yml"

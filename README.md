@@ -4,7 +4,7 @@
 
 **Pre-built Vagrant Box**:
 
-  - [`vagrant init geerlingguy/ubuntu1604`](https://vagrantcloud.com/geerlingguy/boxes/ubuntu1604)
+  - [`vagrant init inakrin/betao`](https://vagrantcloud.com/geerlingguy/boxes/betao)
   - See older versions: http://files.midwesternmac.com/
 
 This example build configuration installs and configures Ubuntu 16.04 x86_64 minimal using Ansible, and then generates two Vagrant box files, for:
@@ -56,8 +56,10 @@ Created in 2016 by [Jeff Geerling](http://jeffgeerling.com/), author of [Ansible
 
 ## Fork information
 
-Forked by @inakrin, following updates are made: 
+Forked by @inakrin for Betao, following updates are made: 
   
   - Updated Ubuntu version to 16.04.3
   - Added default insecure vagrant key to the build, so the box doesn't need to use password for authentication. 
   - Adjusteed for django development, installed related packages (refer to ansible/main.yml)
+  - Added requirements.txt autoinstall
+  - Added package.json autoinstall
