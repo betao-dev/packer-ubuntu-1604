@@ -11,11 +11,6 @@
       "script": "scripts/setup.sh"
     },
     {
-      "type": "shell",
-      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
-      "script": "scripts/vagrant.sh"
-    },
-    {
       "type": "file",
       "source": "requirements.txt",
       "destination": "/home/vagrant/requirements.txt"
@@ -34,6 +29,11 @@
       "type": "ansible-local",
       "playbook_file": "ansible/main.yml",
       "galaxy_file": "requirements.yml"
+    },
+    {
+      "type": "shell",
+      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
+      "script": "scripts/vagrant.sh"
     },
     {
       "type": "shell",

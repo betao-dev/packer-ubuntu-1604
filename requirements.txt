@@ -42,7 +42,7 @@ httplib2==0.9.2
 ipaddress==1.0.17
 jsonfield==1.0.3
 jsonobject==0.6.3
-kombu==3.0.25
+kombu==3.0.30
 lxml==3.8.0
 Markdown==2.6.1
 MySQL-python==1.2.5
