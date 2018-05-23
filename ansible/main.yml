@@ -4,7 +4,7 @@
   gather_facts: yes
   vars:
     wkhtmltopdf_installation: package
-    wkhtmltopdf_version: 0.12.2
+    wkhtmltopdf_version: 0.12.4
     mysql_root_password: dev
   roles:
     - geerlingguy.nodejs
@@ -41,6 +41,7 @@
         - python-mysqldb
         - mysql-server
         - nginx
+        - xfonts-75dpi
 
     - name: Add Google Chrome key
       shell: wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
